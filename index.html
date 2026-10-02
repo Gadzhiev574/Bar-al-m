@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Bir Şey Söylemek İstedim</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%}body{background:#000;color:#fff;font-family:Arial,sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:25px}.whatsapp{position:fixed;top:15px;right:15px;max-width:230px;color:#777;font-size:12px;line-height:1.5;text-align:right}.container{width:100%;max-width:600px;text-align:center}.screen{display:none;animation:fade .5s ease}.screen.active{display:block}h1{font-size:30px;margin-bottom:25px}p{color:#ddd;font-size:18px;line-height:1.8;margin-bottom:30px}button{padding:14px 28px;margin:8px;border-radius:30px;font-size:16px;cursor:pointer;transition:.2s}button:hover{transform:scale(1.04)}.yes{background:#fff;color:#000;border:1px solid #fff}.no{background:#000;color:#fff;border:1px solid #555}@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}@media(max-width:500px){h1{font-size:26px}p{font-size:16px}.whatsapp{max-width:190px}}
+</style></head><body>
+<div class="whatsapp">Seçimini yaptıktan sonra WhatsApp'tan yazabilirsin. 🤍</div>
+<div class="container">
+<section id="page1" class="screen active"><h1>Öncelikle...</h1><p>Öncelikle nasılsın diye sormak istedim. Umarım iyisindir.</p><button class="yes" onclick="nextPage(2)">Devam</button></section>
+<section id="page2" class="screen"><h1>Sana söylemek istediğim bir şey var.</h1><p>Bunu sadece barışalım diye değil, sana gerçekten ne kadar değer verdiğimi göstermek için yaptım. Aramızda ne yaşandıysa yaşandı, ama seni kırdığım yerleri düşündüm. Her şeyi bir anda düzeltemeyeceğimi biliyorum. Sadece bir şans daha verip, bu sefer laflarla değil davranışlarımla göstermek istiyorum. Seni kaybetmek istemiyorum.</p><button class="yes" onclick="answer(true)">Barışalım</button><button class="no" onclick="answer(false)">Barışmayalım</button></section>
+<section id="page3" class="screen"><h1 id="title"></h1><p id="message"></p><button class="yes" onclick="location.reload()">Başa Dön</button></section>
+</div>
+<script>
+function nextPage(page){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('page'+page).classList.add('active')}
+function answer(choice){if(choice){document.getElementById('title').textContent='Teşekkür ederim. 🤍';document.getElementById('message').textContent='Her şeyi bir anda düzeltmek zorunda değiliz. Bu sefer sözlerle değil, davranışlarımla göstermeye çalışacağım.'}else{document.getElementById('title').textContent='Kararına saygı duyuyorum.';document.getElementById('message').textContent='Bunu sadece barışalım diye değil, sana gerçekten ne hissettiğimi söyleyebilmek için yaptım. Her şeye rağmen okuduğun için teşekkür ederim. 🤍'}nextPage(3)}
+</script></body></html>
